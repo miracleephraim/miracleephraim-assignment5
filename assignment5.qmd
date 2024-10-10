@@ -50,7 +50,7 @@ plt.title("Education Spending vs. Primary School Enrollment Rates")
 ```
 
 *Figure 1:* Relationship between share of GDP and primary school enrollment [source] (https://databank.worldbank.org/source/world-development-indicators).
-```{python, echo=False}
+```{python, echo=Fals}
 
 plt.hist(wdi["adult_literacy_rate"])
 plt.xlabel("Adult Literacy Rate (%)")
@@ -62,12 +62,13 @@ plt.title("Distribution of Adult Literacy Rates")
 *Figure 2:* Distribution of adult literacy rates [source] (https://databank.worldbank.org/source/world-development-indicators). 
 
 ## Tables
-
+```{table}
 | Indicator                       | Mean (sd)      | Minimum | Maximum  |
 |---------------------------------|:---------------|--------:|:--------:|
 | Adult Literacy Rate             | 79.57% (19.37%)| 19.37%  |99.99%    |
 | Primary School Enrollment Rate  | 100.87%(12.04%)| 64.40%  |138.19%   |
 | Education Expenditure GDP Share | 4.22%(2.07%)   | 1.02%   |16.58%    |
+```
 
 ## Bibliography
 

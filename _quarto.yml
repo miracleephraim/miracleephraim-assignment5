@@ -1,10 +1,12 @@
 ---
-  title: "assignment5"
-  author: "Miracle Ephraim"
-  date: "2024-10-09"
-  date format: "MMMM D, YYYY"
-  format: pdf
-  bibliography: references.bib
+title: "Assignment 5"
+author: "Miracle Ephraim"
+date: "2024-10-09"
+date-format: "MMMM D, YYYY"
+format: 
+  pdf:
+    default: true
+bibliography: references.bib
 ---
 
 
