@@ -23,13 +23,12 @@ We explored the following variables:
 * **Education Expenditure GDP Share (% of GDP):** General government expenditure on education (current, capital, and transfers) is expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. General government usually refers to local, regional and central governments
 
 ## Analysis
-```{table}
 | Indicator                       | Mean (sd)      | Minimum | Maximum  |
 |---------------------------------|:---------------|--------:|:--------:|
 | Adult Literacy Rate             | 79.57% (19.37%)| 19.37%  |99.99%    |
 | Primary School Enrollment Rate  | 100.87%(12.04%)| 64.40%  |138.19%   |
 | Education Expenditure GDP Share | 4.22%(2.07%)   | 1.02%   |16.58%    |
-```
+
 
 ## Distribution of Adult Literacy Rates in Observed Nations
 
