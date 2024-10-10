@@ -1,0 +1,74 @@
+---
+title: "assignment5"
+author: "Miracle Ephraim"
+format: pdf
+bibliography: references.bib
+---
+
+## Loading dataset
+
+```{python}
+
+import pandas as pd
+import wbgapi as wb
+import matplotlib.pyplot as plt
+import numpy as np
+
+wdi = pd.read_csv("wdi.csv")
+wdi.info()
+
+```
+
+## Data Analysis 
+Exploring inflation rate, gdp growth rate, and gdp per capita. 
+
+**Adult Literacy Rate:**
+The average adult literacy rate for 49 observations in the dataset is 79.57%, with a standard deviation of 19.37%. The smallest inflation rate was 27.28%, and the highest value was 99.99%.
+
+**Primary School Enrollment Rate:**
+The average primary school enrollment rate for 114 observations in the dataset is 100.87%, with a standard deviation of 12.04%. The smallest rate was 64.40% and the highest value observed 138.19%. 
+
+**Education Expenditure GDP Share:**
+The average education expenditure GDP share for 105 observations was 4.22%, with a standard deviation of 2.07%. The smallest amount of 1.02% and 16.58%.
+
+```{python}
+
+print(wdi[['adult_literacy_rate', 'primary_school_enrolment_rate', 'education_expenditure_gdp_share']].describe())
+
+```
+
+## Visualisations
+
+```{python, echo=False}
+
+
+plt.scatter(wdi["education_expenditure_gdp_share"], wdi["primary_school_enrolment_rate"])
+plt.xlabel("Education Expenditure GDP Share")
+plt.ylabel("Primary School Enrollment Rate (%)")
+plt.title("Education Spending vs. Primary School Enrollment Rates")
+
+```
+
+*Figure 1:* Relationship between share of GDP and primary school enrollment [source] (https://databank.worldbank.org/source/world-development-indicators).
+```{python, echo=False}
+
+plt.hist(wdi["adult_literacy_rate"])
+plt.xlabel("Adult Literacy Rate (%)")
+plt.ylabel("Frequency")
+plt.title("Distribution of Adult Literacy Rates")
+
+```
+
+*Figure 2:* Distribution of adult literacy rates [source] (https://databank.worldbank.org/source/world-development-indicators). 
+
+## Tables
+
+| Indicator                       | Mean (sd)      | Minimum | Maximum  |
+|---------------------------------|:---------------|--------:|:--------:|
+| Adult Literacy Rate             | 79.57% (19.37%)| 19.37%  |99.99%    |
+| Primary School Enrollment Rate  | 100.87%(12.04%)| 64.40%  |138.19%   |
+| Education Expenditure GDP Share | 4.22%(2.07%)   | 1.02%   |16.58%    |
+
+## Bibliography
+
+

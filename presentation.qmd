@@ -1,0 +1,61 @@
+---
+title: "Exploring Education Indicators Worldwide"
+author: "Miracle Ephraim"
+format: 
+    revealjs:
+        transition: slide
+        transition-speed: fast
+        theme: sky
+
+---
+
+## Background
+Research consistently shows that education is a key driver of a nation's economic growth  [1] (https://www.hoover.org/sites/default/files/uploads/documents/0817928928_9.pdf). A more educated population fosters higher employment rates and increased innovation, both of which fuel economic progress. Based on this, one might expect that increased government investment in education would naturally lead to improved educational outcomes. In this presentation, we will examine whether the data supports this hypothesis.
+
+## Data
+Our analysis will be based on world development indicators collected by the World Bank in 2022. 
+
+## Variables
+We explored the following variables:
+* **Primary School Enrollment Rate:** Adjusted net enrollment is the number of pupils of the school-age group for primary education, enrolled either in primary or secondary education, expressed as a percentage of the total population in that age group
+
+* **Adult Literacy Rate:** Adult literacy rate is the percentage of people ages 15 and above who can both read and write with understanding a short simple statement about their everyday life.
+
+* **Education Expenditure GDP Share (% of GDP):** General government expenditure on education (current, capital, and transfers) is expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. General government usually refers to local, regional and central governments
+
+## Analysis
+| Indicator                       | Mean (sd)      | Minimum | Maximum  |
+|---------------------------------|:---------------|--------:|:--------:|
+| Adult Literacy Rate             | 79.57% (19.37%)| 19.37%  |99.99%    |
+| Primary School Enrollment Rate  | 100.87%(12.04%)| 64.40%  |138.19%   |
+| Education Expenditure GDP Share | 4.22%(2.07%)   | 1.02%   |16.58%    |
+
+## Distribution of Adult Literacy Rates in Observed Nations
+
+```{python, echo=False}
+
+plt.hist(wdi["adult_literacy_rate"])
+plt.xlabel("Adult Literacy Rate (%)")
+plt.ylabel("Frequency")
+plt.title("Distribution of Adult Literacy Rates")
+
+```
+
+*Figure 1:* Distribution of adult literacy rates [source] (https://databank.worldbank.org/source/world-development-indicators). 
+
+## Education Spending vs. Primary School Enrollment Rates
+
+```{python, echo=False}
+
+
+plt.scatter(wdi["education_expenditure_gdp_share"], wdi["primary_school_enrolment_rate"])
+plt.xlabel("Education Expenditure GDP Share")
+plt.ylabel("Primary School Enrollment Rate (%)")
+plt.title("Education Spending vs. Primary School Enrollment Rates")
+
+```
+
+*Figure 2:* Relationship between share of GDP and primary school enrollment [source] (https://databank.worldbank.org/source/world-development-indicators).
+
+## Conclusion
+A large portion of countries included in our observation had literacy rates well above 80% in adults, which is strong sign of some level of education. Moving on to the relationship between primary school enrollment rates and proportion of GDP spent on education, there does not appear to be a strong one. There appears to be a slight positive relationship between the two, signifying increased government spending on education leads is associated with increased enrollment in schooling. However, additional analysis is necessary to determine whether this relationship is significant. 
