@@ -1,17 +1,13 @@
 ---
-title: "assignment5"
+title: "Assignment 5"
 author: "Miracle Ephraim"
 date: "2024-10-09"
-date-format: "MMMM D, YYYY"
-format: 
-  pdf: default
+format: html
 bibliography: references.bib
 ---
-
-
 ## Loading dataset
 
-```{python}
+```{python, include = false}
 
 import pandas as pd
 import wbgapi as wb
@@ -35,36 +31,6 @@ The average primary school enrollment rate for 114 observations in the dataset i
 **Education Expenditure GDP Share:**
 The average education expenditure GDP share for 105 observations was 4.22%, with a standard deviation of 2.07%. The smallest amount of 1.02% and 16.58%.
 
-```{python}
-
-print(wdi[['adult_literacy_rate', 'primary_school_enrolment_rate', 'education_expenditure_gdp_share']].describe())
-
-```
-
-## Visualisations
-
-```{python, echo=False}
-
-
-plt.scatter(wdi["education_expenditure_gdp_share"], wdi["primary_school_enrolment_rate"])
-plt.xlabel("Education Expenditure GDP Share")
-plt.ylabel("Primary School Enrollment Rate (%)")
-plt.title("Education Spending vs. Primary School Enrollment Rates")
-
-```
-
-*Figure 1:* Relationship between share of GDP and primary school enrollment [source] (https://databank.worldbank.org/source/world-development-indicators).
-```{python, echo=False}
-
-plt.hist(wdi["adult_literacy_rate"])
-plt.xlabel("Adult Literacy Rate (%)")
-plt.ylabel("Frequency")
-plt.title("Distribution of Adult Literacy Rates")
-
-```
-
-*Figure 2:* Distribution of adult literacy rates [source] (https://databank.worldbank.org/source/world-development-indicators). 
-
 ## Tables
 
 | Indicator                       | Mean (sd)      | Minimum | Maximum  |
@@ -74,6 +40,42 @@ plt.title("Distribution of Adult Literacy Rates")
 | Education Expenditure GDP Share | 4.22%(2.07%)   | 1.02%   |16.58%    |
 
 
+
+```{python}
+
+print(wdi[['adult_literacy_rate', 'primary_school_enrolment_rate', 'education_expenditure_gdp_share']].describe())
+
+```
+
+## Visualisations
+
+```{python, echo=False}
+#| label: fig-educ-enrollment
+#| fig-cap: "Relationship between share of GDP and primary school enrollment [(source)](https://databank.worldbank.org/source/world-development-indicators) "
+
+plt.scatter(wdi["education_expenditure_gdp_share"], wdi["primary_school_enrolment_rate"])
+plt.xlabel("Education Expenditure GDP Share")
+plt.ylabel("Primary School Enrollment Rate (%)")
+plt.title("Education Spending vs. Primary School Enrollment Rates")
+
+```
+
+
+```{python, echo=False}
+#| label: fig-hist-litrates
+#| fig-cap: "Figure 2. Distribution of adult literacy rates [(source)](https://databank.worldbank.org/source/world-development-indicators)"
+
+plt.hist(wdi["adult_literacy_rate"])
+plt.xlabel("Adult Literacy Rate (%)")
+plt.ylabel("Frequency")
+plt.title("Distribution of Adult Literacy Rates")
+
+```
+
 ## Bibliography
 
+1. @iyer2009public
 
+2. @erum2015empirical
+
+3. @barro2002education
